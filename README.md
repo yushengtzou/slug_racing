@@ -10,16 +10,17 @@ A simple racing game built with C++ and SDL2.
 ## Installation
 
 ### Windows
-1. Download SDL2 development libraries for MinGW from [SDL2 Releases](https://github.com/libsdl-org/SDL/releases/latest)
-2. Extract `SDL2.dll` from `x86_64-w64-mingw32/bin/` to your project folder
-3. Add SDL2's `include` and `lib` folders from `x86_64-w64-mingw32/` to your MinGW installation (typically `C:\MinGW\`)
-   - Copy contents of `include/SDL2` to `C:\MinGW\include\SDL2`
-   - Copy contents of `lib` to `C:\MinGW\lib`
+1. Install MSYS2 from [MSYS2 Website](https://www.msys2.org/)
+2. Open MSYS2 MINGW64 terminal and run:   ```bash
+   pacman -Syu
+   pacman -S --overwrite "*" mingw-w64-x86_64-SDL2   ```
+3. Copy SDL2.dll to your project folder:   ```bash
+   cp /mingw64/bin/SDL2.dll /path/to/your/project/   ```
 
 ## Building
 
 ### Windows
-g++ -std=c++11 main.cpp -o slug_racing -I"C:\MinGW\include\SDL2" -L"C:\MinGW\lib" -lSDL2main -lSDL2
+g++ -std=c++11 main.cpp -o slug_racing -I"C:\msys64\mingw64\include\SDL2" -L"C:\msys64\mingw64\lib" -lmingw32 -lSDL2main -lSDL2 -mwindows
 
 ### Linux
 
