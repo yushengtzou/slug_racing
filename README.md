@@ -18,6 +18,9 @@ A simple racing game built with C++ and SDL2.
 
 ## Building
 
+### Windows
+g++ -std=c++11 main.cpp -o slug_racing -I"C:\MinGW\include\SDL2" -L"C:\MinGW\lib" -lSDL2main -lSDL2
+
 ### Linux
 
 g++ -std=c++11 main.cpp -o lottery_game $(pkg-config --cflags --libs sdl2)
