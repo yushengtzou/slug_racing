@@ -1,6 +1,6 @@
 #include <SDL.h>
 #include <iostream>
-#include <cstdlib> // For rand()
+#include <cstdlib>
 #include <vector>
 
 // Update these constants to be initialized later
