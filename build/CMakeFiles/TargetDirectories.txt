@@ -1,0 +1,3 @@
+C:/school/113_2/lottery/slug_racing/build/CMakeFiles/slug_racing.dir
+C:/school/113_2/lottery/slug_racing/build/CMakeFiles/edit_cache.dir
+C:/school/113_2/lottery/slug_racing/build/CMakeFiles/rebuild_cache.dir

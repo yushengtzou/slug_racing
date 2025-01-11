@@ -18,9 +18,10 @@ A simple racing game built with C++ and SDL2.
 
 ## Building
 
-### Linux
+### Windows
 
-g++ -std=c++11 main.cpp -o lottery_game $(pkg-config --cflags --libs sdl2)
+cmake -G "MinGW Makefiles" ..
+mingw32-make
 
 ## Running
-./lottery_game
+./slug_racing.exe
