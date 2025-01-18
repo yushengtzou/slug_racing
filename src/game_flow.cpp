@@ -182,7 +182,7 @@ void GameFlow::loop() {
                         foods[i] = nullptr;
                     }
                     // generate new food?
-                    double food_appear_probability = 0.2 * slugs[i]->year_boost;
+                    double food_appear_probability = 1 * slugs[i]->year_boost;
                     if (slugs[i]->x > food_appear_x && !foods[i] && rand() < food_appear_probability * RAND_MAX) {
                         int food_type = rand() % 3;
                         bool is_poop = rand() < (0.2 - food_appear_probability) * RAND_MAX;
