@@ -302,4 +302,35 @@ CMakeFiles/slug_racing.dir/src/main.cpp.obj: \
  C:\school\113_2\lottery\slug_racing\src\display.h \
  C:\school\113_2\lottery\slug_racing\src\slug_enum.h \
  C:\school\113_2\lottery\slug_racing\src\game_flow.h \
- C:\school\113_2\lottery\slug_racing\src\game_state.h
+ C:\school\113_2\lottery\slug_racing\src\game_state.h \
+ C:\school\113_2\lottery\slug_racing\src\slug.h \
+ C:\school\113_2\lottery\slug_racing\src\element.h \
+ C:/msys64/mingw64/include/c++/12.1.0/vector \
+ C:/msys64/mingw64/include/c++/12.1.0/bits/stl_uninitialized.h \
+ C:/msys64/mingw64/include/c++/12.1.0/bits/stl_vector.h \
+ C:/msys64/mingw64/include/c++/12.1.0/bits/stl_bvector.h \
+ C:/msys64/mingw64/include/c++/12.1.0/bits/vector.tcc \
+ C:/msys64/mingw64/include/c++/12.1.0/deque \
+ C:/msys64/mingw64/include/c++/12.1.0/bits/stl_deque.h \
+ C:/msys64/mingw64/include/c++/12.1.0/bits/deque.tcc \
+ C:/msys64/mingw64/include/c++/12.1.0/memory \
+ C:/msys64/mingw64/include/c++/12.1.0/bits/stl_tempbuf.h \
+ C:/msys64/mingw64/include/c++/12.1.0/bits/stl_raw_storage_iter.h \
+ C:/msys64/mingw64/include/c++/12.1.0/bits/align.h \
+ C:/msys64/mingw64/include/c++/12.1.0/bit \
+ C:/msys64/mingw64/include/c++/12.1.0/bits/uses_allocator.h \
+ C:/msys64/mingw64/include/c++/12.1.0/bits/unique_ptr.h \
+ C:/msys64/mingw64/include/c++/12.1.0/tuple \
+ C:/msys64/mingw64/include/c++/12.1.0/bits/shared_ptr.h \
+ C:/msys64/mingw64/include/c++/12.1.0/bits/shared_ptr_base.h \
+ C:/msys64/mingw64/include/c++/12.1.0/bits/allocated_ptr.h \
+ C:/msys64/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
+ C:/msys64/mingw64/include/c++/12.1.0/ext/concurrence.h \
+ C:/msys64/mingw64/include/c++/12.1.0/bits/shared_ptr_atomic.h \
+ C:/msys64/mingw64/include/c++/12.1.0/bits/atomic_base.h \
+ C:/msys64/mingw64/include/c++/12.1.0/bits/atomic_lockfree_defines.h \
+ C:/msys64/mingw64/include/c++/12.1.0/backward/auto_ptr.h \
+ C:/msys64/mingw64/include/c++/12.1.0/pstl/glue_memory_defs.h \
+ C:/msys64/mingw64/include/c++/12.1.0/pstl/execution_defs.h \
+ C:/msys64/mingw64/include/c++/12.1.0/array \
+ C:/msys64/mingw64/include/c++/12.1.0/compare

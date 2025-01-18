@@ -18,6 +18,8 @@ add_executable(slug_racing
     src/display.cpp
     src/game_flow.cpp
     src/game_state.h
+    src/element.h
+    src/slug.cpp
 )
 
 target_link_libraries(slug_racing 

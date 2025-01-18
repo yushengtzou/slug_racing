@@ -1,0 +1,25 @@
+圖檔對應員工
+0: Ben
+1: Daniel
+2: Wes
+3: Tako
+4: Yuming
+5: Mu
+6: Lulu
+
+
+介紹順序
+正式員工
+  醫材部
+    Lulu
+    Yuming
+    Mu
+  設計部
+    Tako
+  AI創新部
+    Wes
+專案笙
+  AI創新部
+    Daniel
+    Ben
+

@@ -7,9 +7,6 @@ int Display::background_height = 144;
 int Display::window_width = 216;
 int Display::window_height = 144;
 
-int Display::slug_width = 48;
-int Display::slug_height = 32;
-
 Display::Display(SDL_Renderer* renderer, int height) : renderer(renderer) {
     screen_height = height;
     zoom_factor = height / Display::window_height;
@@ -95,17 +92,7 @@ void Display::reset_slugs() {
     SDL_QueryTexture(slug_textures[0], NULL, NULL, NULL, NULL);
 }
 
-void Display::display_slug(SlugType slug, int x, int y, int frame, SlugState state) {
-    SDL_Rect src_rect = {
-        frame * slug_width, state * slug_height,
-        slug_width, slug_height
-    };
-
-    SDL_Rect dest_rect = {
-        (x - slug_width / 2) * zoom_factor, (y - slug_height / 2) * zoom_factor,
-        slug_width * zoom_factor, slug_height * zoom_factor
-    };
-
-    SDL_RenderCopy(renderer, slug_textures[slug], &src_rect, &dest_rect);
+SDL_Texture* Display::get_slug_texture(SlugType slug) {
+    return slug_textures[slug];
 }
 

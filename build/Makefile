@@ -200,6 +200,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\slug_racing.dir\build.make CMakeFiles/slug_racing.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/slug.obj: src/slug.cpp.obj
+.PHONY : src/slug.obj
+
+# target to build an object file
+src/slug.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\slug_racing.dir\build.make CMakeFiles/slug_racing.dir/src/slug.cpp.obj
+.PHONY : src/slug.cpp.obj
+
+src/slug.i: src/slug.cpp.i
+.PHONY : src/slug.i
+
+# target to preprocess a source file
+src/slug.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\slug_racing.dir\build.make CMakeFiles/slug_racing.dir/src/slug.cpp.i
+.PHONY : src/slug.cpp.i
+
+src/slug.s: src/slug.cpp.s
+.PHONY : src/slug.s
+
+# target to generate assembly for a file
+src/slug.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\slug_racing.dir\build.make CMakeFiles/slug_racing.dir/src/slug.cpp.s
+.PHONY : src/slug.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -218,6 +242,9 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/slug.obj
+	@echo ... src/slug.i
+	@echo ... src/slug.s
 .PHONY : help
 
 

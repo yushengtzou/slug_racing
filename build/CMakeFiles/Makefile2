@@ -84,12 +84,12 @@ clean: CMakeFiles/slug_racing.dir/clean
 CMakeFiles/slug_racing.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\slug_racing.dir\build.make CMakeFiles/slug_racing.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\slug_racing.dir\build.make CMakeFiles/slug_racing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\school\113_2\lottery\slug_racing\build\CMakeFiles --progress-num=1,2,3,4 "Built target slug_racing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\school\113_2\lottery\slug_racing\build\CMakeFiles --progress-num=1,2,3,4,5 "Built target slug_racing"
 .PHONY : CMakeFiles/slug_racing.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/slug_racing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\school\113_2\lottery\slug_racing\build\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\school\113_2\lottery\slug_racing\build\CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/slug_racing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\school\113_2\lottery\slug_racing\build\CMakeFiles 0
 .PHONY : CMakeFiles/slug_racing.dir/rule

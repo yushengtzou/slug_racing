@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/school/113_2/lottery/slug_racing/src/display.cpp" "CMakeFiles/slug_racing.dir/src/display.cpp.obj" "gcc" "CMakeFiles/slug_racing.dir/src/display.cpp.obj.d"
   "C:/school/113_2/lottery/slug_racing/src/game_flow.cpp" "CMakeFiles/slug_racing.dir/src/game_flow.cpp.obj" "gcc" "CMakeFiles/slug_racing.dir/src/game_flow.cpp.obj.d"
   "C:/school/113_2/lottery/slug_racing/src/main.cpp" "CMakeFiles/slug_racing.dir/src/main.cpp.obj" "gcc" "CMakeFiles/slug_racing.dir/src/main.cpp.obj.d"
+  "C:/school/113_2/lottery/slug_racing/src/slug.cpp" "CMakeFiles/slug_racing.dir/src/slug.cpp.obj" "gcc" "CMakeFiles/slug_racing.dir/src/slug.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

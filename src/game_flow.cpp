@@ -14,27 +14,20 @@ GameFlow::GameFlow(Display& display, State game_state, SDL_Renderer* renderer)
     display.reset_background();
     switch (state) {
         case InternGame:
-            slug_count = 5;
+            line_count = 5;
+            int start_x = 60;
             int start_y = 40;
             int interval_y = 20;
-            slugs[0] = {AI_Daniel, SlugState::MOVING, 98, start_y, 0};
-            slugs[1] = {AI_Benson, SlugState::MOVING, 104, start_y + interval_y, 0};
-            slugs[2] = {AI_Wes, SlugState::MOVING, 92, start_y + interval_y * 2, 0};
-            slugs[3] = {DS, SlugState::MOVING, 106, start_y + interval_y * 3, 0};
-            slugs[4] = {DS, SlugState::MOVING, 106, start_y + interval_y * 4, 0};
+
+            slugs[0] = std::make_unique<Slug>(renderer, display.get_slug_texture(AI_Daniel), display.zoom_factor, AI_Daniel, start_x, start_y, SlugState::MOVING, 1.0);
+            slugs[1] = std::make_unique<Slug>(renderer, display.get_slug_texture(AI_Benson), display.zoom_factor, AI_Benson, start_x, start_y + interval_y, SlugState::MOVING, 1.0);
+            slugs[2] = std::make_unique<Slug>(renderer, display.get_slug_texture(AI_Wes), display.zoom_factor, AI_Wes, start_x, start_y + interval_y * 2, SlugState::MOVING, 1.0);
+            slugs[3] = std::make_unique<Slug>(renderer, display.get_slug_texture(DS), display.zoom_factor, DS, start_x, start_y + interval_y * 3, SlugState::MOVING, 1.0);
+            slugs[4] = std::make_unique<Slug>(renderer, display.get_slug_texture(DS), display.zoom_factor, DS, start_x, start_y + interval_y * 4, SlugState::MOVING, 1.0);
     }
 }
 
 GameFlow::~GameFlow() {}
-
-void GameFlow::calc_frame(Slug& slug) {
-    switch (slug.state) {
-        case SlugState::MOVING:
-            slug.frame++;
-            slug.frame %= 2;
-            break;
-    }
-}
 
 void GameFlow::loop() {
     SDL_Event event;
@@ -51,18 +44,34 @@ void GameFlow::loop() {
             }
         }
 
-        switch (state) {
-            case InternGame:        
-                display.display_background();
-                display.add_background_offset(3);
-                for (int i = 0; i < slug_count; i++) {
-                    calc_frame(slugs[i]);
-                    display.display_slug(slugs[i].type, slugs[i].x, slugs[i].y, slugs[i].frame, slugs[i].state);
-                }
-                SDL_RenderPresent(renderer);
-                break;
+        display_all();
+
+        // event
+        for (int i = 0; i < line_count; i++) {
+
+            if (slugs[i]->state == SlugState::MOVING) {
+                
+            }
         }
 
         SDL_Delay(FRAME_DELAY);
+    }
+}
+
+void GameFlow::display_all() {
+    switch (state) {
+        case InternGame:
+        case EmployeeGame:
+            display.display_background();
+            display.add_background_offset(3);
+            
+            for (int i = 0; i < line_count; i++) {
+                for (auto& food : foods[i]) {
+                    food->display();
+                }
+                slugs[i]->display();
+            }
+            SDL_RenderPresent(renderer);
+            break;
     }
 }

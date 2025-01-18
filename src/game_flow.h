@@ -3,14 +3,12 @@
 #include "display.h"
 #include "game_state.h"
 #include "slug_enum.h"
-
-struct Slug {
-    SlugType type;
-    SlugState state;
-    int x;
-    int y;
-    int frame;
-};
+#include "slug.h"
+#include "element.h"
+#include <vector>
+#include <deque>
+#include <memory>
+#include <array>
 
 class GameFlow {
 public:
@@ -26,8 +24,10 @@ private:
     bool running;
     Uint32 game_time;
 
-    int slug_count;
-    Slug slugs[5];
+    static const int MAX_LINES = 5;
+    int line_count;
+    std::array<std::unique_ptr<Slug>, MAX_LINES> slugs;
+    std::array<std::deque<std::unique_ptr<Element>>, MAX_LINES> foods;
 
-    void calc_frame(Slug& slug);
+    void display_all();
 };

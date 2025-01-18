@@ -18,10 +18,8 @@ public:
     void display_background();
     void add_background_offset(int move_x);
 
-    static int slug_width;
-    static int slug_height;
     void reset_slugs();
-    void display_slug(SlugType slug, int x, int y, int frame, SlugState state);
+    SDL_Texture* get_slug_texture(SlugType slug);
 
 private:
     SDL_Renderer* renderer;
