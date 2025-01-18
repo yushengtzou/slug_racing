@@ -28,6 +28,7 @@ private:
     long long game_time;
 
     static const int start_x, fastest_x;
+    int show_year_time;
 
     static const int MAX_LINES = 5;
     int line_count;

@@ -32,12 +32,14 @@ GameFlow::GameFlow(Display& display, State game_state, SDL_Renderer* renderer)
             slugs[3] = std::make_unique<Slug>(renderer, display.get_slug_texture(MM_MuHuan), display.zoom_factor, MM_MuHuan, GameFlow::start_x, start_y + interval_y * 3, SlugState::MOVING, 1.0);
             slugs[4] = std::make_unique<Slug>(renderer, display.get_slug_texture(MM_Lulu), display.zoom_factor, MM_Lulu, GameFlow::start_x, start_y + interval_y * 4, SlugState::MOVING, 3.0);
             end_banner.x += 240;
+            show_year_time = 4;
             break;
         case InternGame:
             line_count = 2;
             slugs[0] = std::make_unique<Slug>(renderer, display.get_slug_texture(AI_Daniel), display.zoom_factor, AI_Daniel, GameFlow::start_x, 80, SlugState::MOVING, 1.0);
             slugs[1] = std::make_unique<Slug>(renderer, display.get_slug_texture(AI_Benson), display.zoom_factor, AI_Benson, GameFlow::start_x, 130, SlugState::MOVING, 1.0);
             end_banner.x += 350;
+            show_year_time = 0;
             break;
         case PrizeIntro:
         case EndAnimation:
@@ -66,15 +68,16 @@ void GameFlow::loop() {
         std::cout << "game_time: " << game_time << std::endl;
         display_all();
 
-        if (game_time <= 0) {
+        if (game_time < show_year_time) {
 
         }
 
-        else if (game_time > 0 && game_time < 0) {
-
+        else if (game_time < show_year_time + 3) {
+            
         }
 
-        else if (game_time >= 1) {
+        // game logic
+        else if (true) {
             // Calculate speeds and find fastest slug
             int fastest_slug_index = 0;
             for (int i = 0; i < line_count; i++) {
@@ -111,8 +114,6 @@ void GameFlow::loop() {
 
             // Camera moves with fastest slug's speed
             cam_move_x = slugs[fastest_slug_index]->speed;
-
-            std::cout << "slugs[0]->x: " << slugs[0]->x << std::endl;
             
             // Move background with camera
             display.add_background_offset(cam_move_x);
@@ -165,6 +166,10 @@ void GameFlow::display_all() {
                     food->display();
                 }
                 slugs[i]->display();
+            }
+
+            if (game_time >= show_year_time && game_time < show_year_time + 3) {
+                display.display_countdown(game_time - show_year_time);
             }
 
             display.fill_bottom();

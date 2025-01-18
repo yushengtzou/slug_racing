@@ -72,6 +72,16 @@ void Display::display_background() {
     SDL_RenderCopy(renderer, background_texture, &src_rect, &dest_rect_cont);
 }
 
+void Display::display_countdown(int count) {
+    std::cout << "display_countdown: " << count << std::endl;
+    SDL_Surface* surface = SDL_LoadBMP("../assets/321.bmp");
+    SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+    SDL_FreeSurface(surface);
+    SDL_Rect src_rect = {count*64, 0, 64, 144};
+    SDL_Rect dest_rect = {(window_width / 2 - 32) * zoom_factor, (window_height / 2 - 72) * zoom_factor, 64*zoom_factor, 144*zoom_factor};
+    SDL_RenderCopy(renderer, texture, &src_rect, &dest_rect);
+}
+
 void Display::fill_bottom() {
     // bottom
     SDL_Rect rect = {0, window_height * zoom_factor, 300000, 200000};
