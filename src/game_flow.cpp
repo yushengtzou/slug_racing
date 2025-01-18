@@ -5,7 +5,7 @@
 const int GameFlow::start_x = 50;
 const int GameFlow::fastest_x = 70;
 
-const int FRAME_DELAY = 700;
+const int FRAME_DELAY = 500;
 
 GameFlow::GameFlow(Display& display, State game_state, SDL_Renderer* renderer) 
     : display(display),
