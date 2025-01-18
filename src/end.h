@@ -12,7 +12,7 @@ public:
         this->topleft_y = 0;
         this->x = topleft_x + tile_size * tile_row / 2;
         this->y = topleft_y + tile_size * tile_col / 2;
-        this->bump_width = tile_size * tile_row;
+        this->bump_width = 0;
         this->bump_height = tile_size * tile_col;
     }
     void display() override {

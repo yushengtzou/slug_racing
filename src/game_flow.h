@@ -27,8 +27,11 @@ private:
     bool running;
     long long game_time;
 
-    static const int start_x, fastest_x;
-    int show_year_time;
+    static const int start_x;
+    int fastest_x;
+    int show_year_time, countdown_hold_time;
+
+    bool all_slugs_reached;
 
     static const int MAX_LINES = 5;
     int line_count;

@@ -3,9 +3,8 @@
 #include <iostream>
 
 const int GameFlow::start_x = 50;
-const int GameFlow::fastest_x = 70;
 
-const int FRAME_DELAY = 500;
+const int FRAME_DELAY = 100;
 
 GameFlow::GameFlow(Display& display, State game_state, SDL_Renderer* renderer) 
     : display(display),
@@ -19,7 +18,9 @@ GameFlow::GameFlow(Display& display, State game_state, SDL_Renderer* renderer)
 
     display.reset_background();
     cam_move_x = 0;
-
+    fastest_x = 75;
+    countdown_hold_time = 2;
+    all_slugs_reached = false;
     int start_y = 40;
     int interval_y = 20;
 
@@ -72,26 +73,29 @@ void GameFlow::loop() {
 
         }
 
-        else if (game_time < show_year_time + 3) {
-            
+        else if (game_time < show_year_time + countdown_hold_time * 3) {
+            for (int i = 0; i < line_count; i++) {
+                slugs[i]->frame = 0;
+            }
         }
 
         // game logic
-        else if (true) {
+        else if (!all_slugs_reached) {
             // Calculate speeds and find fastest slug
             int fastest_slug_index = 0;
             for (int i = 0; i < line_count; i++) {
                 if (slugs[i]->state == SlugState::MOVING && slugs[i]->rank == -1) {
+                    slugs[i]->frame = (slugs[i]->frame + 1) % 2;
                     const double max_random = 3.0;
                     double random_factor = static_cast<double>(rand()) / RAND_MAX * max_random;
                     slugs[i]->speed = static_cast<int>(1.0 * (slugs[i]->year_boost * slugs[i]->year_boost_factor + 
                                                             slugs[i]->food_boost * slugs[i]->food_boost_factor) * 
                                                     random_factor);
                     slugs[i]->total_distance += slugs[i]->speed;
-                }
-                // Track fastest slug
-                if (slugs[i]->total_distance > slugs[fastest_slug_index]->total_distance) {
-                    fastest_slug_index = i;
+                    // Track fastest slug
+                    if (slugs[i]->total_distance > slugs[fastest_slug_index]->total_distance) {
+                        fastest_slug_index = i;
+                    }
                 }
             }
             // Update positions relative to fastest slug
@@ -103,7 +107,10 @@ void GameFlow::loop() {
             }
             else {
                 for (int i = 0; i < line_count; i++) {
-                    if (i == fastest_slug_index) {
+                    if (slugs[i]->rank != -1) {
+                        slugs[i]->x = end_banner.x;
+                    }
+                    else if (i == fastest_slug_index) {
                         slugs[i]->x = GameFlow::fastest_x;
                     }
                     else {
@@ -144,8 +151,17 @@ void GameFlow::loop() {
             }
 
             if (all_reached) {
-                running = false;
+                all_slugs_reached = true;
+                // running = false;
             }
+        }
+
+        // all slugs reached, end
+        else {
+            for (int i = 0; i < line_count; i++) {
+                slugs[i]->x = end_banner.x;
+            }
+            display_all();
         }
 
         game_time++;
@@ -168,8 +184,8 @@ void GameFlow::display_all() {
                 slugs[i]->display();
             }
 
-            if (game_time >= show_year_time && game_time < show_year_time + 3) {
-                display.display_countdown(game_time - show_year_time);
+            if (game_time >= show_year_time && game_time < show_year_time + countdown_hold_time * 3) {
+                display.display_countdown((game_time - show_year_time) / countdown_hold_time);
             }
 
             display.fill_bottom();

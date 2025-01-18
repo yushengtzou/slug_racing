@@ -77,8 +77,9 @@ void Display::display_countdown(int count) {
     SDL_Surface* surface = SDL_LoadBMP("../assets/321.bmp");
     SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
     SDL_FreeSurface(surface);
-    SDL_Rect src_rect = {count*64, 0, 64, 144};
-    SDL_Rect dest_rect = {(window_width / 2 - 32) * zoom_factor, (window_height / 2 - 72) * zoom_factor, 64*zoom_factor, 144*zoom_factor};
+    SDL_Rect src_rect = {count * 64, 0, 64, 144};
+    // currently screen but should be window for correct zoom
+    SDL_Rect dest_rect = {100 * zoom_factor, 0, 64*zoom_factor, 144*zoom_factor};
     SDL_RenderCopy(renderer, texture, &src_rect, &dest_rect);
 }
 
