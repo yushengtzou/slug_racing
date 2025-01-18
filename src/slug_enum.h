@@ -64,14 +64,14 @@ class SlugStateRecord {
                     animationType = LOOP;
                     slugTextureRow = 0;
                     decorator = SPARKLE;
-                    animation_duration = 4;
+                    animation_duration = 6;
                     break;
                 case SlugState::STOPPED:
                     frameCount = 2;
                     animationType = LOOP;
                     slugTextureRow = 0;
                     decorator = NONE;
-                    animation_duration = 4;
+                    animation_duration = 5;
                     break;
                 default:
                     frameCount = 0;

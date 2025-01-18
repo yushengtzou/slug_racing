@@ -4,7 +4,7 @@
 
 const int GameFlow::start_x = 50;
 
-const int FRAME_DELAY = 100;
+const int FRAME_DELAY = 500;
 
 GameFlow::GameFlow(Display& display, State game_state, SDL_Renderer* renderer) 
     : display(display),
@@ -166,7 +166,9 @@ void GameFlow::loop() {
 
                 if (slugs[i]->state_record.state == SlugState::MOVING) {
                     // bump into food?
+                    if(foods[i]) std::cout << "food position: " << foods[i]->x << " slug position: " << slugs[i]->x << " food type: " << foods[i]->food_type << " slug state: " << slugs[i]->state_record.state << std::endl;
                     if (foods[i] && slugs[i]->isBumped(foods[i].get())) {
+                        std::cout << "==========slug " << i << " bumped into food " << foods[i]->food_type << std::endl;
                         switch (foods[i]->food_type) {
                             case FoodType::RED:
                             case FoodType::GREEN:
@@ -183,7 +185,8 @@ void GameFlow::loop() {
                     }
                     // generate new food?
                     double food_appear_probability = 1 * slugs[i]->year_boost;
-                    if (slugs[i]->x > food_appear_x && !foods[i] && rand() < food_appear_probability * RAND_MAX) {
+                    if (slugs[i]->total_distance > food_appear_x && !foods[i] && rand() < food_appear_probability * RAND_MAX && end_banner.x > 250) {
+                        std::cout << "food appeared at line " << i << std::endl;
                         int food_type = rand() % 3;
                         bool is_poop = rand() < (0.2 - food_appear_probability) * RAND_MAX;
                         if (!is_poop) foods[i] = std::make_unique<Food>(renderer, &display, static_cast<FoodType>(food_type), 300, slugs[i]->y);
