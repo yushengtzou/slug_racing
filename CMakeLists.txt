@@ -28,6 +28,7 @@ add_executable(slug_racing
     src/element.h
     src/slug.cpp
     src/end.h
+    src/food.h
 )
 
 target_link_libraries(slug_racing 

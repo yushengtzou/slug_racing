@@ -5,14 +5,14 @@
 
 class Slug : public Element {
 public:
-    Slug(SDL_Renderer* renderer, SDL_Texture* texture, int zoom_factor, SlugType type, int x, int y, SlugState state, double year_boost);
+    Slug(SDL_Renderer* renderer, SDL_Texture* texture, int zoom_factor, SlugType type, int x, int y, double year_boost);
     void display() override;
     void change_speed_factors(std::string cause, double num);
     bool isBumped(Element* element);
 
     SlugType type;
-    int frame, speed;
-    SlugState state;
+    int speed;
+    SlugStateRecord state_record;
 
     int rank;
 
