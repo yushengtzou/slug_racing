@@ -25,7 +25,6 @@ Slug::Slug(SDL_Renderer* renderer, SDL_Texture* texture, int zoom_factor, SlugTy
 void Slug::display() {
 
     // rewrite!!
-    frame = (frame + 1) % 2;
 
     SDL_Rect src_rect = {
         frame * display_width, state * display_height,
