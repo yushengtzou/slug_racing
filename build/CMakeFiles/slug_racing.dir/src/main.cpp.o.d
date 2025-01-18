@@ -1021,6 +1021,7 @@ CMakeFiles/slug_racing.dir/src/main.cpp.o: \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/display.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/slug_enum.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/game_flow.h \
+  /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/element.h \
+  /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/end.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/game_state.h \
-  /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/slug.h \
-  /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/element.h
+  /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/slug.h

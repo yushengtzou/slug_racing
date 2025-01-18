@@ -12,7 +12,7 @@ Display::Display(SDL_Renderer* renderer, int width, int height) : renderer(rende
     std::cout << "width ratio: " << width/Display::window_width << ", height ratio: " << height/Display::window_height << std::endl;
 
     reset_background();
-    reset_slugs();
+    reset_elements();
 }
 
 Display::~Display() {
@@ -81,7 +81,7 @@ void Display::fill_bottom() {
     // SDL_RenderFillRect(renderer, &rect2);
 }
 
-void Display::reset_slugs() {
+void Display::reset_elements() {
 
     SDL_Surface* surfaces[100];
     for (int i = 0; i < 7; i++) {
@@ -94,10 +94,20 @@ void Display::reset_slugs() {
             return;
         }
     }
-    SDL_QueryTexture(slug_textures[0], NULL, NULL, NULL, NULL);
+
+    SDL_Surface* surface = SDL_LoadBMP("../assets/start_and_end.bmp");
+    SDL_Surface* surface2 = SDL_LoadBMP("../assets/start_and_end2.bmp");
+    end_pattern_textures[0] = SDL_CreateTextureFromSurface(renderer, surface);
+    end_pattern_textures[1] = SDL_CreateTextureFromSurface(renderer, surface2);
+    SDL_FreeSurface(surface);
+    SDL_FreeSurface(surface2);
 }
 
 SDL_Texture* Display::get_slug_texture(SlugType slug) {
     return slug_textures[slug];
+}
+
+SDL_Texture* Display::get_end_pattern_texture(bool isGreen) {
+    return end_pattern_textures[isGreen];
 }
 

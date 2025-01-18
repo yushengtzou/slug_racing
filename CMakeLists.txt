@@ -27,6 +27,7 @@ add_executable(slug_racing
     src/game_state.h
     src/element.h
     src/slug.cpp
+    src/end.h
 )
 
 target_link_libraries(slug_racing 

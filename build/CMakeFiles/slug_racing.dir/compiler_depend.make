@@ -1996,6 +1996,7 @@ CMakeFiles/slug_racing.dir/src/game_flow.cpp.o: /Users/yusheng/Dropbox/02.gradua
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdint.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/display.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/element.h \
+  /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/end.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/game_flow.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/game_state.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/slug.h \
@@ -3023,6 +3024,7 @@ CMakeFiles/slug_racing.dir/src/main.cpp.o: /Users/yusheng/Dropbox/02.graduate/3.
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdint.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/display.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/element.h \
+  /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/end.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/game_flow.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/game_state.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/slug.h \
@@ -4506,6 +4508,8 @@ CMakeFiles/slug_racing.dir/src/slug.cpp.o: /Users/yusheng/Dropbox/02.graduate/3.
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__type_traits/underlying_type.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__type_traits/type_identity.h:
+
+/Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/end.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__algorithm/ranges_contains.h:
 

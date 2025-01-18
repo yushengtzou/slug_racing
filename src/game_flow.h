@@ -1,10 +1,11 @@
 #pragma once
 #include <SDL2/SDL.h>
 #include "display.h"
+#include "element.h"
+#include "end.h"
 #include "game_state.h"
 #include "slug_enum.h"
 #include "slug.h"
-#include "element.h"
 #include <vector>
 #include <deque>
 #include <memory>
@@ -24,7 +25,7 @@ private:
     SDL_Renderer* renderer;
     State state;
     bool running;
-    Uint32 game_time;
+    long long game_time;
 
     static const int start_x, fastest_x;
 
@@ -32,6 +33,8 @@ private:
     int line_count;
     std::array<std::unique_ptr<Slug>, MAX_LINES> slugs;
     std::array<std::deque<std::unique_ptr<Element>>, MAX_LINES> foods;
+
+    End end_banner;
 
     int cam_move_x;
     void display_all();

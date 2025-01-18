@@ -1021,6 +1021,7 @@ CMakeFiles/slug_racing.dir/src/game_flow.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__format/formatter_tuple.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/print \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/unistd.h \
+  /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/element.h \
+  /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/end.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/game_state.h \
-  /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/slug.h \
-  /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/element.h
+  /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/slug.h

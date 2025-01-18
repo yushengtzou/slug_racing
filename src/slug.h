@@ -14,6 +14,8 @@ public:
     int frame, speed;
     SlugState state;
 
+    int rank;
+
     static constexpr double year_boost_factor = 1.05, food_boost_factor = 1.5;
     double year_boost; // 1, 2, 3
     double food_boost; // 0, 1, 2, 3

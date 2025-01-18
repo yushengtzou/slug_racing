@@ -19,6 +19,7 @@ Slug::Slug(SDL_Renderer* renderer, SDL_Texture* texture, int zoom_factor, SlugTy
     this->bump_height = 8;
     this->year_boost = year_boost;
     this->food_boost = 1;
+    this->rank = -1;
 }
 
 void Slug::display() {

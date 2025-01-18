@@ -18,8 +18,10 @@ public:
     void display_background();
     void add_background_offset(int move_x);
 
-    void reset_slugs();
+    void reset_elements();
+
     SDL_Texture* get_slug_texture(SlugType slug);
+    SDL_Texture* get_end_pattern_texture(bool isGreen);
 
 private:
     SDL_Renderer* renderer;
@@ -27,4 +29,5 @@ private:
     static int background_width;
     static int background_height;
     SDL_Texture* slug_textures[200];
+    SDL_Texture* end_pattern_textures[2];
 };

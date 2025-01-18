@@ -4,5 +4,5 @@ enum State {
     PrizeIntro,
     InternGame,
     EmployeeGame,
-    End
+    EndAnimation
 }; 
