@@ -2,13 +2,13 @@
 #include <iostream>
 
 enum SlugType {
-    AI_Daniel,  // intern
     AI_Benson,  // intern
+    AI_Daniel,  // intern
     AI_Wes,     // employee
     DS,         // employee, 2 years
-    MM_Lulu,    // employee, 3 years
+    MM_YuMing,  // employee
     MM_MuHuan,  // employee
-    MM_YuMin    // employee
+    MM_Lulu     // employee, 3 years
 };
 
 enum SlugState {
