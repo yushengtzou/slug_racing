@@ -1,6 +1,13 @@
 #pragma once
 #include <iostream>
 
+enum FoodType {
+    RED,
+    GREEN,
+    BLUE,
+    POOP
+};
+
 enum SlugType {
     AI_Benson,  // intern
     AI_Daniel,  // intern
@@ -38,30 +45,54 @@ enum SlugState {
 };
 
 class SlugStateRecord {
-    SlugStateRecord(SlugState state){
-        switch (state){
-            case SlugState::MOVING:
-                frameCount = 2;
-                animationType = LOOP;
-                slugTextureRow = 0;
-                decorator = NONE;
-                break;
-            default:
-                frameCount = 0;
-                animationType = LOOP;
-                slugTextureRow = 0;
-                decorator = NONE;
-                std::cout << "Invalid state" << std::endl;
-                break;
+    public:
+        SlugStateRecord(SlugState state){
+            this->frame = 0;
+            this->animation_time = 0;
+            this->state = state;
+            switch (state){
+                case SlugState::MOVING:
+                    frameCount = 2;
+                    animationType = LOOP;
+                    slugTextureRow = 0;
+                    decorator = NONE;
+                    animation_duration = -1;
+                    break;
+                case SlugState::BOOSTED:
+                case SlugState::SHIELDED:
+                    frameCount = 2;
+                    animationType = LOOP;
+                    slugTextureRow = 0;
+                    decorator = SPARKLE;
+                    animation_duration = 4;
+                    break;
+                case SlugState::STOPPED:
+                    frameCount = 2;
+                    animationType = LOOP;
+                    slugTextureRow = 0;
+                    decorator = NONE;
+                    animation_duration = 4;
+                    break;
+                default:
+                    frameCount = 0;
+                    animationType = LOOP;
+                    slugTextureRow = 0;
+                    decorator = NONE;
+                    animation_duration = -1;
+                    break;
+            }
         }
-    }
-    int frameCount;
-    enum animationTypeEnum {ONCE, LOOP};
-    animationTypeEnum animationType;
-    int slugTextureRow;
+        // constants
+        int frameCount;
+        SlugState state;
+        enum animationTypeEnum {ONCE, LOOP};
+        animationTypeEnum animationType;
+        int slugTextureRow;
+        int animation_duration;
 
-    enum decoratorEnum {NONE, SPARKLE, BIG_SPARKLE, UPUP};
-    decoratorEnum decorator;
-
-    int frame;
+        // variables
+        int frame;          // 0 to frameCount - 1
+        int animation_time; // 0 to animationDuration - 1
+        enum decoratorEnum {NONE, SPARKLE, BIG_SPARKLE, UPUP};
+        decoratorEnum decorator;
 };

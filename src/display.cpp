@@ -112,10 +112,18 @@ void Display::reset_elements() {
     end_pattern_textures[1] = SDL_CreateTextureFromSurface(renderer, surface2);
     SDL_FreeSurface(surface);
     SDL_FreeSurface(surface2);
+
+    SDL_Surface* food_surface = SDL_LoadBMP("../assets/food.bmp");
+    food_texture = SDL_CreateTextureFromSurface(renderer, food_surface);
+    SDL_FreeSurface(food_surface);
 }
 
 SDL_Texture* Display::get_slug_texture(SlugType slug) {
     return slug_textures[slug];
+}
+
+SDL_Texture* Display::get_food_texture() {
+    return food_texture;
 }
 
 SDL_Texture* Display::get_end_pattern_texture(bool isGreen) {

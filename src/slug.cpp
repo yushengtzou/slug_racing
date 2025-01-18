@@ -5,29 +5,28 @@ int Slug::display_height = 32;
 int Slug::anchor_x = 48/2;
 int Slug::anchor_y = 32/2;
 
-Slug::Slug(SDL_Renderer* renderer, SDL_Texture* texture, int zoom_factor, SlugType type, int x, int y, SlugState state, double year_boost) {
-    this->renderer = renderer;
-    this->texture = texture;
-    this->zoom_factor = zoom_factor;
-    this->type = type;  
+Slug::Slug(SDL_Renderer* renderer, SDL_Texture* texture, int zoom_factor, SlugType type, int x, int y, double year_boost)
+    : renderer(renderer),
+      texture(texture),
+      zoom_factor(zoom_factor),
+      type(type),
+      speed(0),
+      state_record(SlugState::MOVING),
+      year_boost(year_boost),
+      food_boost(1),
+      rank(-1)
+{
     this->x = x;
     this->y = y;
-    this->frame = 0;
-    this->speed = 0;
-    this->state = state;
     this->bump_width = 26;
     this->bump_height = 8;
-    this->year_boost = year_boost;
-    this->food_boost = 1;
-    this->rank = -1;
 }
 
 void Slug::display() {
-
-    // rewrite!!
+    int col = 0; // state_record.state
 
     SDL_Rect src_rect = {
-        frame * display_width, state * display_height,
+        state_record.frame * display_width, col * display_height,
         display_width, display_height
     };
 

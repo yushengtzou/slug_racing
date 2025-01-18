@@ -6,6 +6,7 @@
 #include "game_state.h"
 #include "slug_enum.h"
 #include "slug.h"
+#include "food.h"
 #include <vector>
 #include <deque>
 #include <memory>
@@ -30,13 +31,14 @@ private:
     static const int start_x;
     int fastest_x;
     int show_year_time, countdown_hold_time;
+    int food_appear_x, end_banner_appear_x;
 
     bool all_slugs_reached;
 
     static const int MAX_LINES = 5;
     int line_count;
     std::array<std::unique_ptr<Slug>, MAX_LINES> slugs;
-    std::array<std::deque<std::unique_ptr<Element>>, MAX_LINES> foods;
+    std::array<std::unique_ptr<Food>, MAX_LINES> foods;
 
     End end_banner;
 

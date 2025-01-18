@@ -1997,6 +1997,7 @@ CMakeFiles/slug_racing.dir/src/game_flow.cpp.o: /Users/yusheng/Dropbox/02.gradua
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/display.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/element.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/end.h \
+  /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/food.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/game_flow.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/game_state.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/slug.h \
@@ -3025,6 +3026,7 @@ CMakeFiles/slug_racing.dir/src/main.cpp.o: /Users/yusheng/Dropbox/02.graduate/3.
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/display.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/element.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/end.h \
+  /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/food.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/game_flow.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/game_state.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/slug.h \
@@ -4112,6 +4114,8 @@ CMakeFiles/slug_racing.dir/src/slug.cpp.o: /Users/yusheng/Dropbox/02.graduate/3.
 /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/slug.h:
 
 /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/game_flow.h:
+
+/Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/food.h:
 
 /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/game_flow.cpp:
 

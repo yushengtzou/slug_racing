@@ -23,6 +23,7 @@ public:
 
     SDL_Texture* get_slug_texture(SlugType slug);
     SDL_Texture* get_end_pattern_texture(bool isGreen);
+    SDL_Texture* get_food_texture();
 
 private:
     SDL_Renderer* renderer;
@@ -31,4 +32,5 @@ private:
     static int background_height;
     SDL_Texture* slug_textures[200];
     SDL_Texture* end_pattern_textures[2];
+    SDL_Texture* food_texture;
 };
