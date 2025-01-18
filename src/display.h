@@ -16,6 +16,7 @@ public:
     static int background_offset;
     void reset_background();
     void display_background();
+    void display_countdown(int count);
     void add_background_offset(int move_x);
 
     void reset_elements();
