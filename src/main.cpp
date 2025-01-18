@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
     }
 
     SDL_Window* window = SDL_CreateWindow(
-        "Pixel Art Game",
+        "ATOP Slug Racing",
         SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
         SCREEN_WIDTH, SCREEN_HEIGHT,
         SDL_WINDOW_SHOWN | SDL_WINDOW_FULLSCREEN_DESKTOP
@@ -49,14 +49,19 @@ int main(int argc, char* argv[]) {
     Uint32 frameStart;
     int frameTime;
 
-    Display display(sdl_renderer, actual_height);
+    std::cout << "actual_width: " << actual_width << ", actual_height: " << actual_height << std::endl;
+    Display display(sdl_renderer, actual_width, actual_height);
 
     Uint32 game_start = SDL_GetTicks();
     int game_time = 0;
 
+    /*
     GameFlow game_flow(display, InternGame, sdl_renderer);
     game_flow.loop();
+    */
 
+    GameFlow game_flow(display, EmployeeGame, sdl_renderer);
+    game_flow.loop();
 
     SDL_DestroyRenderer(sdl_renderer);
     SDL_DestroyWindow(window);

@@ -4,13 +4,13 @@
 
 class Display {
 public:
-    Display(SDL_Renderer* renderer, int screen_height);
+    Display(SDL_Renderer* renderer, int screen_width, int screen_height);
     ~Display();
+    void fill_bottom();
 
     static int window_width;
     static int window_height;
 
-    int screen_height;
     int zoom_factor;
 
     static int background_offset;

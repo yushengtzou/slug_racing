@@ -7,9 +7,9 @@ int Display::background_height = 144;
 int Display::window_width = 216;
 int Display::window_height = 144;
 
-Display::Display(SDL_Renderer* renderer, int height) : renderer(renderer) {
-    screen_height = height;
-    zoom_factor = height / Display::window_height;
+Display::Display(SDL_Renderer* renderer, int width, int height) : renderer(renderer) {
+    zoom_factor = width / Display::window_width;
+    std::cout << "width ratio: " << width/Display::window_width << ", height ratio: " << height/Display::window_height << std::endl;
 
     reset_background();
     reset_slugs();
@@ -72,15 +72,21 @@ void Display::display_background() {
     SDL_RenderCopy(renderer, background_texture, &src_rect, &dest_rect_cont);
 }
 
+void Display::fill_bottom() {
+    // bottom
+    SDL_Rect rect = {0, window_height * zoom_factor, 300000, 200000};
+    // right
+    SDL_Rect rect2 = {window_width * zoom_factor, 0, 100000, 200000};
+    SDL_RenderFillRect(renderer, &rect);
+    // SDL_RenderFillRect(renderer, &rect2);
+}
+
 void Display::reset_slugs() {
 
     SDL_Surface* surfaces[100];
-    surfaces[0] = SDL_LoadBMP("../assets/slug_0.bmp");
-    surfaces[1] = SDL_LoadBMP("../assets/slug_1.bmp");
-    surfaces[2] = SDL_LoadBMP("../assets/slug_3.bmp");
-    surfaces[3] = SDL_LoadBMP("../assets/slug_4.bmp");
-    
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 7; i++) {
+        std::string filename = "../assets/slug_" + std::to_string(i) + ".bmp";
+        surfaces[i] = SDL_LoadBMP(filename.c_str());
         slug_textures[i] = SDL_CreateTextureFromSurface(renderer, surfaces[i]);
         SDL_FreeSurface(surfaces[i]);
         if (!slug_textures[i]) {
@@ -88,7 +94,6 @@ void Display::reset_slugs() {
             return;
         }
     }
-    
     SDL_QueryTexture(slug_textures[0], NULL, NULL, NULL, NULL);
 }
 

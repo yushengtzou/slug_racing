@@ -7,9 +7,8 @@ class Element {
 public:
     Element(){}
     virtual void display() = 0;
-    void add_offset(int x, int y){
-        this->x += x;
-        this->y += y;
+    void move_left(int x){
+        this->x -= x;
     }
 
     int x, y;

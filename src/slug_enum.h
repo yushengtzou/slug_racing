@@ -31,30 +31,37 @@ enum SlugState {
 
     // riding a starfish
     RIDING,
-    JUMPING_OFF
+    JUMPING_OFF,
 
     // turning into another slug
     CHANGING,
 };
 
 class SlugStateRecord {
-    SlugStateRecord(SlugStateEnum state){
+    SlugStateRecord(SlugState state){
         switch (state){
-            case SlugStateEnum::MOVING:
+            case SlugState::MOVING:
                 frameCount = 2;
                 animationType = LOOP;
                 slugTextureRow = 0;
+                decorator = NONE;
                 break;
             default:
+                frameCount = 0;
+                animationType = LOOP;
+                slugTextureRow = 0;
+                decorator = NONE;
                 std::cout << "Invalid state" << std::endl;
                 break;
         }
     }
-    const int frameCount;
-    const enum animationType {ONCE, LOOP};
-    const int slugTextureRow;
+    int frameCount;
+    enum animationTypeEnum {ONCE, LOOP};
+    animationTypeEnum animationType;
+    int slugTextureRow;
 
-    const enum decorator {NONE, SPARKLE, BIG_SPARKLE, UPUP}
+    enum decoratorEnum {NONE, SPARKLE, BIG_SPARKLE, UPUP};
+    decoratorEnum decorator;
 
     int frame;
-}
+};

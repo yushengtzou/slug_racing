@@ -9,6 +9,13 @@ if(WIN32)
     set(SDL2_DIR "${CMAKE_PREFIX_PATH}/lib/cmake/SDL2")
     include_directories("${CMAKE_PREFIX_PATH}/include")
     include_directories("${CMAKE_PREFIX_PATH}/include/SDL2")
+elseif(APPLE)
+    # Add macOS-specific SDL2 include paths
+    include_directories("/opt/homebrew/include")
+    include_directories("/usr/local/include")
+    # Add library search paths
+    link_directories("/opt/homebrew/lib")
+    link_directories("/usr/local/lib")
 endif()
 
 find_package(SDL2 REQUIRED)

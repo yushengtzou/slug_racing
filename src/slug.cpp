@@ -13,12 +13,12 @@ Slug::Slug(SDL_Renderer* renderer, SDL_Texture* texture, int zoom_factor, SlugTy
     this->x = x;
     this->y = y;
     this->frame = 0;
+    this->speed = 0;
     this->state = state;
     this->bump_width = 26;
     this->bump_height = 8;
     this->year_boost = 1;
     this->food_boost = 1;
-    this->speed_base = 1.0;
 }
 
 void Slug::display() {
@@ -39,26 +39,23 @@ void Slug::display() {
     SDL_RenderCopy(renderer, texture, &src_rect, &dest_rect);
 }
 
-void Slug::change_speed(string cause, double num = 1){
-    switch (cause){
-        case "return":
-            food_boost = 1;
-            break;
-        case "year":
-            year_boost = num;
-            break;
-        case "red":
-            food_boost = 3;
-            break;
-        case "green":
-        case "blue":
-            food_boost = 2;
-            break;
-        case "poop":
-            food_boost = 0;
-            break;
+void Slug::change_speed_factors(std::string cause, double num) {
+    if (cause == "return") {
+        food_boost = 0;
     }
-    speed_base = year_boost * year_boost_factor * food_boost * food_boost_factor;
+    else if (cause == "year") {
+        year_boost = num;
+    }
+    else if (cause == "red" || cause == "green" || cause == "blue") {
+        food_boost = num;
+    }
+    else if (cause == "poop") {
+        food_boost = 0;
+    }
+}
+
+void Slug::move_total_x(int x) {
+    this->total_distance += x;
 }
 
 bool Slug::isBumped(Element* element) {

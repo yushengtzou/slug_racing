@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/school/113_2/lottery/slug_racing/src/display.cpp" "CMakeFiles/slug_racing.dir/src/display.cpp.obj" "gcc" "CMakeFiles/slug_racing.dir/src/display.cpp.obj.d"
-  "C:/school/113_2/lottery/slug_racing/src/game_flow.cpp" "CMakeFiles/slug_racing.dir/src/game_flow.cpp.obj" "gcc" "CMakeFiles/slug_racing.dir/src/game_flow.cpp.obj.d"
-  "C:/school/113_2/lottery/slug_racing/src/main.cpp" "CMakeFiles/slug_racing.dir/src/main.cpp.obj" "gcc" "CMakeFiles/slug_racing.dir/src/main.cpp.obj.d"
-  "C:/school/113_2/lottery/slug_racing/src/slug.cpp" "CMakeFiles/slug_racing.dir/src/slug.cpp.obj" "gcc" "CMakeFiles/slug_racing.dir/src/slug.cpp.obj.d"
+  "/Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/display.cpp" "CMakeFiles/slug_racing.dir/src/display.cpp.o" "gcc" "CMakeFiles/slug_racing.dir/src/display.cpp.o.d"
+  "/Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/game_flow.cpp" "CMakeFiles/slug_racing.dir/src/game_flow.cpp.o" "gcc" "CMakeFiles/slug_racing.dir/src/game_flow.cpp.o.d"
+  "/Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/main.cpp" "CMakeFiles/slug_racing.dir/src/main.cpp.o" "gcc" "CMakeFiles/slug_racing.dir/src/main.cpp.o.d"
+  "/Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/slug.cpp" "CMakeFiles/slug_racing.dir/src/slug.cpp.o" "gcc" "CMakeFiles/slug_racing.dir/src/slug.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
