@@ -142,6 +142,8 @@ slug_racing: CMakeFiles/slug_racing.dir/src/slug.cpp.o
 slug_racing: CMakeFiles/slug_racing.dir/build.make
 slug_racing: /opt/homebrew/Cellar/sdl2/2.30.11/lib/libSDL2main.a
 slug_racing: /opt/homebrew/Cellar/sdl2/2.30.11/lib/libSDL2.dylib
+slug_racing: /opt/homebrew/Cellar/sdl2_ttf/2.24.0/lib/libSDL2_ttf.dylib
+slug_racing: /opt/homebrew/Cellar/sdl2_image/2.8.4/lib/libSDL2_image.dylib
 slug_racing: CMakeFiles/slug_racing.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable slug_racing"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/slug_racing.dir/link.txt --verbose=$(VERBOSE)

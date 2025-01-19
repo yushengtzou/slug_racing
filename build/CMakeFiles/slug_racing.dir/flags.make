@@ -4,7 +4,7 @@
 # compile CXX with /Library/Developer/CommandLineTools/usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/opt/homebrew/include -I/usr/local/include -isystem /opt/homebrew/Cellar/sdl2/2.30.11/include/SDL2
+CXX_INCLUDES = -I/opt/homebrew/include -I/usr/local/include -I/opt/homebrew/Cellar/rapidjson/1.1.0/include -isystem /opt/homebrew/Cellar/sdl2/2.30.11/include/SDL2 -isystem /opt/homebrew/Cellar/sdl2_ttf/2.24.0/include/SDL2 -isystem /opt/homebrew/Cellar/sdl2_image/2.8.4/include/SDL2
 
 CXX_FLAGSarm64 = -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6
 

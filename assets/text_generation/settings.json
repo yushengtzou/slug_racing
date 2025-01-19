@@ -1,0 +1,15 @@
+[
+    {
+      "text_list": ["速度+2", "速度+3", "無敵", "停滯"],
+      "output": "food_effect",
+      "size": 12,
+      "text_color": "black"
+    },
+    {
+      "text_list": ["年資加成2點", "年資加成3點"],
+      "output": "year_effect",
+      "size": 18,
+      "text_color": "black"
+    }
+  ]
+  

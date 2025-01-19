@@ -381,6 +381,7 @@ CMakeFiles/slug_racing.dir/src/main.cpp.o: \
   /opt/homebrew/include/SDL2/SDL_version.h \
   /opt/homebrew/include/SDL2/SDL_locale.h \
   /opt/homebrew/include/SDL2/SDL_misc.h \
+  /opt/homebrew/include/SDL2/SDL_ttf.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/ios \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__fwd/ios.h \
@@ -1020,6 +1021,7 @@ CMakeFiles/slug_racing.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/unistd.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/display.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/slug_enum.h \
+  /opt/homebrew/include/SDL2/SDL_image.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/game_flow.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/element.h \
   /Users/yusheng/Dropbox/02.graduate/3.work/A-TOP/slug_racing/src/end.h \

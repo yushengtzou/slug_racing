@@ -19,6 +19,11 @@ elseif(APPLE)
 endif()
 
 find_package(SDL2 REQUIRED)
+find_package(RapidJSON REQUIRED)
+include_directories(${RAPIDJSON_INCLUDE_DIRS})
+
+find_package(SDL2_ttf REQUIRED)
+find_package(SDL2_image REQUIRED)
 
 add_executable(slug_racing
     src/main.cpp
@@ -34,4 +39,6 @@ add_executable(slug_racing
 target_link_libraries(slug_racing 
     SDL2::SDL2main 
     SDL2::SDL2
+    SDL2_ttf::SDL2_ttf
+    SDL2_image::SDL2_image
 ) 

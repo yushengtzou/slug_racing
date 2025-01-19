@@ -15,8 +15,11 @@ public:
         this->bump_height = 32;
     }
     void display() override {
+        int img_index = food_type;
+        if (food_type == FoodType::POOP) img_index = 2;
+        else if (food_type == FoodType::BLUE) img_index = 3;
         SDL_Rect src_rect = {
-            food_type * display_width, 0,
+            img_index * display_width, 0,
             display_width, display_height
         };
         SDL_Rect dest_rect = {

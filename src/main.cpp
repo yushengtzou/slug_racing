@@ -1,4 +1,5 @@
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
 #include <iostream>
 #include "display.h"
 #include "game_flow.h"
@@ -15,6 +16,11 @@ const int SCREEN_HEIGHT = 144;
 int main(int argc, char* argv[]) {
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         std::cerr << "Failed to initialize SDL: " << SDL_GetError() << std::endl;
+        return -1;
+    }
+
+    if (TTF_Init() < 0) {
+        std::cerr << "SDL_ttf could not initialize! Error: " << TTF_GetError() << std::endl;
         return -1;
     }
 
@@ -55,13 +61,12 @@ int main(int argc, char* argv[]) {
     Uint32 game_start = SDL_GetTicks();
     int game_time = 0;
 
-    /*
-    GameFlow game_flow(display, InternGame, sdl_renderer);
-    game_flow.loop();
-    */
+    
+    GameFlow game_flow1(display, InternGame, sdl_renderer);
+    game_flow1.loop();
 
-    GameFlow game_flow(display, EmployeeGame, sdl_renderer);
-    game_flow.loop();
+    GameFlow game_flow2(display, EmployeeGame, sdl_renderer);
+    game_flow2.loop();
 
     SDL_DestroyRenderer(sdl_renderer);
     SDL_DestroyWindow(window);

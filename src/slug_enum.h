@@ -22,8 +22,10 @@ enum SlugState {
     // default
     MOVING,
 
-    // speed boosted
+    // green: speed boosted
     BOOSTED,
+    // red: speed boosted
+    SUPER_BOOSTED,
     // blue star: no harm can be done and speed is boosted
     SHIELDED,
     // poop: stopped
@@ -55,29 +57,26 @@ class SlugStateRecord {
                     frameCount = 2;
                     animationType = LOOP;
                     slugTextureRow = 0;
-                    decorator = NONE;
                     animation_duration = -1;
                     break;
-                case SlugState::BOOSTED:
                 case SlugState::SHIELDED:
+                case SlugState::BOOSTED:
+                case SlugState::SUPER_BOOSTED:
                     frameCount = 2;
                     animationType = LOOP;
                     slugTextureRow = 0;
-                    decorator = SPARKLE;
-                    animation_duration = 6;
+                    animation_duration = 8;
                     break;
                 case SlugState::STOPPED:
                     frameCount = 2;
                     animationType = LOOP;
                     slugTextureRow = 0;
-                    decorator = NONE;
-                    animation_duration = 5;
+                    animation_duration = 8;
                     break;
                 default:
                     frameCount = 0;
                     animationType = LOOP;
                     slugTextureRow = 0;
-                    decorator = NONE;
                     animation_duration = -1;
                     break;
             }
@@ -93,6 +92,4 @@ class SlugStateRecord {
         // variables
         int frame;          // 0 to frameCount - 1
         int animation_time; // 0 to animationDuration - 1
-        enum decoratorEnum {NONE, SPARKLE, BIG_SPARKLE, UPUP};
-        decoratorEnum decorator;
 };
